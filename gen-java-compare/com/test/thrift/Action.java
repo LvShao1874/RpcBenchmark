@@ -1,0 +1,50 @@
+package com.test.thrift;
+
+public enum Action implements org.apache.thrift.TEnum {
+    Action1(0),
+    Action2(1),
+    Action10(2),
+    Action3(3),
+    Action4(10),
+    Action5(8),
+    Action6(9),
+    Action7(5),
+    Action8(6);
+
+
+    private final int value;
+
+    private Action(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public static Action findByValue(int value) {
+        switch (value) {
+
+            case 0:
+                return Action1;
+            case 1:
+                return Action2;
+            case 2:
+                return Action10;
+            case 3:
+                return Action3;
+            case 10:
+                return Action4;
+            case 8:
+                return Action5;
+            case 9:
+                return Action6;
+            case 5:
+                return Action7;
+            case 6:
+                return Action8;
+            default:
+                return null;
+            }
+    }
+}
